@@ -1,0 +1,125 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: monospace;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #cfd1e1;
+}
+
+button {
+	background: none;
+	border: none;
+}
+
+h1 {
+	margin-bottom: 3rem;
+	font-size: 3rem;
+}
+
+.btn-reset {
+	padding: 1rem;
+	color: black;
+}
+
+.search-box {
+	position: relative;
+	width: 100px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+}
+
+
+.search-box:hover {
+	width: 400px;
+}
+
+.search-box::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 100%;
+	background: linear-gradient(#fff, #fff, #e3e3e3);
+	z-index: 1;
+	filter: blur(1px);
+}
+
+.search-box::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -1px;
+	width: 10px;
+	height: 100%;
+	background: #9d9d9d;
+	z-index: 1;
+	filter: blur(1px);
+}
+
+.search-box input {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: none;
+	padding: 10px 25px;
+	outline: none;
+	font-size: 1.1rem;
+	color: #555;
+	background: linear-gradient(#dbdae1, #a3aaba);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
+				15px 15px 15px rgba(0, 0, 0, 0.1),
+				20px 20px 15px rgba(0, 0, 0, 0.1),
+				30px 30px 15px rgba(0, 0, 0, 0.1),
+				inset 1px 1px 2px #fff;
+}
+
+.search-box input::placeholder,
+.search-box input  {
+	color: transparent;
+}
+
+.search-box:hover input::placeholder,
+.search-box:hover input  {
+	color: #555;
+}
+
+.shadow {
+	position: absolute;
+	top: 0;
+	left: -50px;
+	overflow: hidden;
+	width: calc(100% + 50px);
+	height: 300%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), transparent, transparent);
+	transform-origin: top;
+	transform: skew(45deg);
+	pointer-events: none;
+}
+
+.shadow::before {
+	content: '';
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: #cfd1e1;
+	z-index: 1;
+}
+
+.search-outline {
+	position: absolute;
+	right: 20px;
+	color: #555;
+	font-size: 1.5rem;
+	cursor: pointer;
+}

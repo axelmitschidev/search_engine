@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./css/style.css">
+		<title>Indexing</title>
+	</head>
+	<header>
+		<h1 class="card-title text-primary">Indexation</h1>
+		<a class="nav-link" href="/search">Search</a>
+	</header>
+	<body>
+		<form action="/" method="post">
+			<div class="search-box">
+				<div class="shadow"></div>
+				<input style="text-align = center" id="url" type="url" name="url" placeholder="Type your url">
+				<button class="search-outline">Send</button>
+			</div>
+			<div>
+				
+			</div>
+		</form>
+		<form action="/delete" method="post">
+			<button class="btn-reset" type="submit" value="Reset">
+		</form>
+		<ul>
+			{% for site in arr_sites %}
+				<li>
+					<a href="{{ site.url }}">{{ site.url }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>
